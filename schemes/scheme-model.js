@@ -57,7 +57,7 @@ function add(schemeData){
 }
 
 
-function addStep(stepData, id){
+function addStep(stepData, id){ //stretch
     return db('steps')
             .insert(stepData, 'id')
             .then(ids => {

@@ -72,3 +72,20 @@ ON o.CustomerId = c.Id
 JOIN Employee as e
 ON e.Id = o.EmployeeId
 ;
+
+
+
+
+--STRETCH using group by and aggregate functions
+ SELECT
+
+od.OrderID as 'Order ID'
+, COUNT(od.Quantity) as 'Item Count'
+, COUNT(p.productID)
+
+FROM [OrderDetails] as od
+
+JOIN Products as p
+ON p.productID = od.ProductID
+GROUP BY od.OrderID
+;
