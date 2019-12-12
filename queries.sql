@@ -89,3 +89,17 @@ JOIN Products as p
 ON p.productID = od.ProductID
 GROUP BY od.OrderID
 ;
+
+--this one was better
+SELECT
+
+od.OrderID as 'Order ID'
+, SUM(od.Quantity) as 'Total Products on Order'
+, COUNT(p.productID) as 'Item Count'
+
+FROM [OrderDetails] as od
+
+JOIN Products as p
+ON p.productID = od.ProductID
+GROUP BY od.OrderID
+;
