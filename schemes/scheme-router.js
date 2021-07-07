@@ -4,7 +4,7 @@ const Schemes = require('./scheme-model.js');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/', (req, res) => {//X'd
   Schemes.find()
   .then(schemes => {
     res.json(schemes);
@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
   });
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', (req, res) => {//X'd
   const { id } = req.params;
 
   Schemes.findById(id)
@@ -30,7 +30,7 @@ router.get('/:id', (req, res) => {
   });
 });
 
-router.get('/:id/steps', (req, res) => {
+router.get('/:id/steps', (req, res) => { //X'd
   const { id } = req.params;
 
   Schemes.findSteps(id)
@@ -46,7 +46,7 @@ router.get('/:id/steps', (req, res) => {
   });
 });
 
-router.post('/', (req, res) => {
+router.post('/', (req, res) => { //X'd
   const schemeData = req.body;
 
   Schemes.add(schemeData)
@@ -58,7 +58,7 @@ router.post('/', (req, res) => {
   });
 });
 
-router.post('/:id/steps', (req, res) => {
+router.post('/:id/steps', (req, res) => { //X'd
   const stepData = req.body;
   const { id } = req.params; 
 
